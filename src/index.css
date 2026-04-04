@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 120 20% 98%;
+    --foreground: 150 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 10%;
+
+    --primary: 152 72% 24%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 25% 95%;
+    --secondary-foreground: 152 72% 24%;
+
+    --muted: 120 15% 93%;
+    --muted-foreground: 150 10% 40%;
+
+    --accent: 43 96% 56%;
+    --accent-foreground: 150 30% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 15% 88%;
+    --input: 120 15% 88%;
+    --ring: 152 72% 24%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 152 72% 24%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 150 30% 10%;
+    --sidebar-accent: 152 60% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 152 60% 30%;
+    --sidebar-ring: 43 96% 56%;
+
+    /* Custom tokens */
+    --gold: 43 96% 56%;
+    --gold-foreground: 43 50% 15%;
+    --green-light: 120 30% 95%;
+    --green-dark: 152 80% 15%;
+    --hero-overlay: linear-gradient(135deg, hsl(152 72% 24% / 0.85), hsl(152 80% 15% / 0.7));
+    --shadow-card: 0 4px 20px hsl(152 72% 24% / 0.08);
+    --shadow-elevated: 0 8px 32px hsl(152 72% 24% / 0.12);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground;
+  }
+
+  .section-subtitle {
+    @apply text-base md:text-lg text-muted-foreground max-w-2xl;
+  }
+
+  .gold-bar {
+    @apply w-16 h-1 bg-accent rounded-full;
+  }
+
+  .hover-card-lift {
+    @apply transition-all duration-300 hover:shadow-elevated hover:-translate-y-1;
+  }
+
+  .nav-link {
+    @apply relative text-sm font-medium transition-colors duration-200 hover:text-primary
+    after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5
+    after:bg-accent after:scale-x-0 after:origin-left after:transition-transform after:duration-300
+    hover:after:scale-x-100;
+  }
+}
