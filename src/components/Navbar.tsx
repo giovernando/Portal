@@ -22,7 +22,7 @@ const navItems: NavItem[] = [
     label: "Profil",
     path: "/tentang",
     children: [
-      { label: "Sejarah", path: "/tentang/sejarah" },
+      { label: "Tentang Sekolah", path: "/tentang/sejarah" },
       { label: "Visi & Misi", path: "/tentang/visi-misi" },
       { label: "Struktur Organisasi", path: "/tentang/struktur" },
       { label: "Profil Kepala Sekolah", path: "/tentang/kepala-sekolah" },
