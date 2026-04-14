@@ -1,12 +1,41 @@
+import { useEffect, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronLeft, Mail, BookOpen, GraduationCap, Briefcase } from "lucide-react";
+import { ChevronLeft, Mail, BookOpen, GraduationCap, Briefcase, Loader2, User as UserIcon } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { getPersonById } from "@/data/guruStaffData";
+import { guruService, TeacherRecord } from "@/services/guruService";
 
 const ProfilDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const person = id ? getPersonById(id) : undefined;
+  const [person, setPerson] = useState<TeacherRecord | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchDetail = async () => {
+      if (!id) return;
+      try {
+        const data = await guruService.getTeachers();
+        const found = data.find(t => t.id === id);
+        setPerson(found || null);
+      } catch (err) {
+        console.error("Error fetching profile detail:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchDetail();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="min-h-[70vh] flex flex-col items-center justify-center text-muted-foreground">
+          <Loader2 className="w-10 h-10 animate-spin mb-4" />
+          <p>Memuat profil...</p>
+        </div>
+      </Layout>
+    );
+  }
 
   if (!person) {
     return <Navigate to="/tentang/guru-staff" replace />;
@@ -33,11 +62,17 @@ const ProfilDetail = () => {
               {/* Photo Column */}
               <div className="shrink-0 flex flex-col items-center gap-6">
                 <div className="w-48 h-48 md:w-56 md:h-56 rounded-3xl overflow-hidden border-4 border-primary/10 shadow-md">
-                  <img
-                    src={person.photo}
-                    alt={person.name}
-                    className="w-full h-full object-cover"
-                  />
+                  {person.photo_url ? (
+                    <img
+                      src={person.photo_url}
+                      alt={person.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
+                      <UserIcon className="w-20 h-20" />
+                    </div>
+                  )}
                 </div>
                 {person.email && (
                   <a
@@ -66,23 +101,23 @@ const ProfilDetail = () => {
                 )}
 
                 <div className="grid sm:grid-cols-2 gap-6 pt-6 border-t border-border">
-                  {person.pendidikan && (
+                  {person.pendidikan_terakhir && (
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-foreground font-semibold">
                         <GraduationCap className="w-5 h-5 text-accent" />
                         Pendidikan
                       </div>
-                      <p className="text-sm text-muted-foreground">{person.pendidikan}</p>
+                      <p className="text-sm text-muted-foreground">{person.pendidikan_terakhir}</p>
                     </div>
                   )}
 
-                  {person.mataPelajaran && (
+                  {person.mata_pelajaran && (
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-foreground font-semibold">
                         <BookOpen className="w-5 h-5 text-accent" />
                         Mata Pelajaran
                       </div>
-                      <p className="text-sm text-muted-foreground">{person.mataPelajaran}</p>
+                      <p className="text-sm text-muted-foreground">{person.mata_pelajaran}</p>
                     </div>
                   )}
 
@@ -96,23 +131,6 @@ const ProfilDetail = () => {
                     </div>
                   )}
                 </div>
-
-                {person.pengalaman && person.pengalaman.length > 0 && (
-                  <div className="pt-6 border-t border-border">
-                    <div className="flex items-center gap-2 text-foreground font-semibold mb-4">
-                      <Briefcase className="w-5 h-5 text-accent" />
-                      Pengalaman & Riwayat
-                    </div>
-                    <ul className="space-y-3">
-                      {person.pengalaman.map((item, index) => (
-                        <li key={index} className="flex gap-3 text-sm text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary/40 shrink-0 mt-1.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
               </div>
             </div>
           </ScrollReveal>

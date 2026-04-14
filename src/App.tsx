@@ -33,14 +33,29 @@ import Prestasi from "./pages/kesiswaan/Prestasi";
 import PrestasiDetail from "./pages/kesiswaan/PrestasiDetail";
 import Osis from "./pages/kesiswaan/Osis";
 
+import { AuthProvider } from "./contexts/AuthContext";
+
+// Admin Pages
+import AdminLogin from "./pages/admin/Login";
+import AdminLayout, { ProtectedRoute } from "./components/admin/AdminLayout";
+import AdminDashboard from "./pages/admin/Dashboard";
+import AdminGuruStaff from "./pages/admin/GuruStaffAdmin";
+import AdminBerita from "./pages/admin/AdminBerita";
+import AdminGaleri from "./pages/admin/AdminGaleri";
+import AdminPrestasi from "./pages/admin/AdminPrestasi";
+import AdminEkskul from "./pages/admin/AdminEkskul";
+import AdminJadwal from "./pages/admin/AdminJadwal";
+import AdminKalender from "./pages/admin/AdminKalender";
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/tentang" element={<TentangKami />} />
@@ -64,10 +79,27 @@ const App = () => (
           <Route path="/berita/:slug" element={<BeritaDetail />} />
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/kontak" element={<Kontak />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route element={<ProtectedRoute />}>
+            <Route element={<AdminLayout />}>
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/guru-staff" element={<AdminGuruStaff />} />
+              <Route path="/admin/berita" element={<AdminBerita />} />
+              <Route path="/admin/galeri" element={<AdminGaleri />} />
+              <Route path="/admin/prestasi" element={<AdminPrestasi />} />
+              <Route path="/admin/ekskul" element={<AdminEkskul />} />
+              <Route path="/admin/jadwal" element={<AdminJadwal />} />
+              <Route path="/admin/kalender" element={<AdminKalender />} />
+            </Route>
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 

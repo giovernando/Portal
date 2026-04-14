@@ -1,12 +1,41 @@
+import { useEffect, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { ChevronLeft, Calendar } from "lucide-react";
+import { ChevronLeft, Calendar, Loader2 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { getBeritaById } from "@/data/beritaData";
+import { beritaService, NewsRecord } from "@/services/beritaService";
+import { format } from "date-fns";
 
 const BeritaDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const berita = slug ? getBeritaById(slug) : undefined;
+  const [berita, setBerita] = useState<NewsRecord | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchDetail = async () => {
+      if (!slug) return;
+      try {
+        const data = await beritaService.getNewsBySlug(slug);
+        setBerita(data);
+      } catch (err) {
+        console.error("Error fetching news detail:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchDetail();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="min-h-[70vh] flex flex-col items-center justify-center text-muted-foreground">
+          <Loader2 className="w-10 h-10 animate-spin mb-4" />
+          <p>Memuat isi berita...</p>
+        </div>
+      </Layout>
+    );
+  }
 
   if (!berita) {
     return <Navigate to="/berita" replace />;
@@ -34,7 +63,7 @@ const BeritaDetail = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-2 text-sm text-primary font-medium">
                   <Calendar className="w-4 h-4" />
-                  <span>{berita.date}</span>
+                  <span>{format(new Date(berita.published_date), 'dd MMMM yyyy')}</span>
                 </div>
                 <h1 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
                   {berita.title}
@@ -44,7 +73,7 @@ const BeritaDetail = () => {
               {/* Cover Image */}
               <div className="w-full aspect-[21/9] md:aspect-[2.5/1] rounded-3xl overflow-hidden shadow-elevated border border-border">
                 <img
-                  src={berita.img}
+                  src={berita.thumbnail_url || "/placeholder.svg"}
                   alt={berita.title}
                   className="w-full h-full object-cover"
                 />
@@ -52,14 +81,15 @@ const BeritaDetail = () => {
 
               {/* Content */}
               <div className="prose prose-lg dark:prose-invert max-w-none text-muted-foreground">
-                <p className="text-xl font-medium text-foreground leading-relaxed italic border-l-4 border-accent pl-6 mb-8">
-                  {berita.excerpt}
-                </p>
-                {berita.content.map((paragraph, i) => (
-                  <p key={i} className="mb-6 leading-relaxed">
-                    {paragraph}
+                {berita.excerpt && (
+                  <p className="text-xl font-medium text-foreground leading-relaxed italic border-l-4 border-accent pl-6 mb-8">
+                    {berita.excerpt}
                   </p>
-                ))}
+                )}
+                <div 
+                  className="rich-text-content"
+                  dangerouslySetInnerHTML={{ __html: berita.content || "" }} 
+                />
               </div>
             </div>
           </ScrollReveal>

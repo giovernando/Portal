@@ -1,17 +1,48 @@
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, Loader2, User as UserIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { guruData, staffData } from "@/data/guruStaffData";
+import { guruService, TeacherRecord } from "@/services/guruService";
 
 const GuruStaff = () => {
+  const [teachers, setTeachers] = useState<TeacherRecord[]>([]);
+  const [loading, setLoading] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const fetchTeachers = async () => {
+      try {
+        const data = await guruService.getTeachers();
+        setTeachers(data);
+      } catch (err) {
+        console.error("Error fetching teachers:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTeachers();
+  }, []);
+
+  const guruData = teachers.filter(t => t.type === 'guru');
+  const staffData = teachers.filter(t => t.type === 'staff');
 
   const scroll = (dir: "left" | "right") => {
     scrollRef.current?.scrollBy({ left: dir === "left" ? -300 : 300, behavior: "smooth" });
   };
+
+  if (loading) {
+    return (
+      <Layout>
+        <PageHeader title="Guru & Staff" subtitle="Tenaga pendidik dan kependidikan profesional" />
+        <div className="py-20 flex flex-col items-center justify-center text-muted-foreground">
+          <Loader2 className="w-10 h-10 animate-spin mb-4" />
+          <p>Memuat profil guru & staff...</p>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -25,47 +56,61 @@ const GuruStaff = () => {
               <h2 className="text-2xl font-display font-bold text-foreground">Tenaga Pendidik</h2>
               <p className="text-sm text-muted-foreground mt-1">{guruData.length} guru profesional dan berdedikasi</p>
             </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => scroll("left")}
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => scroll("right")}
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
+            {guruData.length > 0 && (
+              <div className="flex gap-2">
+                <button
+                  onClick={() => scroll("left")}
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => scroll("right")}
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-secondary transition-colors"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            )}
           </ScrollReveal>
 
-          <div ref={scrollRef} className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: "none" }}>
-            {guruData.map((g) => (
-              <Link
-                key={g.id}
-                to={`/tentang/guru-staff/${g.id}`}
-                className="min-w-[250px] bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0 group cursor-pointer"
-              >
-                <div className="overflow-hidden rounded-2xl w-20 h-20 mx-auto mb-4 ring-2 ring-transparent group-hover:ring-primary/20 transition-all">
-                  <img
-                    src={g.photo}
-                    alt={g.name}
-                    loading="lazy"
-                    width={512}
-                    height={512}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div className="text-center">
-                  <p className="font-semibold text-foreground group-hover:text-primary transition-colors">{g.name}</p>
-                  <p className="text-sm text-primary font-medium mt-1">{g.role}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{g.pendidikan}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
+          {guruData.length === 0 ? (
+            <div className="py-10 text-center text-muted-foreground">
+              Data guru belum tersedia.
+            </div>
+          ) : (
+            <div ref={scrollRef} className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: "none" }}>
+              {guruData.map((g) => (
+                <Link
+                  key={g.id}
+                  to={`/tentang/guru-staff/${g.id}`}
+                  className="min-w-[250px] bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition-shadow snap-start flex-shrink-0 group cursor-pointer text-current no-underline"
+                >
+                  <div className="overflow-hidden rounded-2xl w-20 h-20 mx-auto mb-4 ring-2 ring-transparent group-hover:ring-primary/20 transition-all">
+                    {g.photo_url ? (
+                      <img
+                        src={g.photo_url}
+                        alt={g.name}
+                        loading="lazy"
+                        width={128}
+                        height={128}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
+                        <UserIcon className="w-8 h-8" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="text-center">
+                    <p className="font-semibold text-foreground group-hover:text-primary transition-colors">{g.name}</p>
+                    <p className="text-sm text-primary font-medium mt-1">{g.role}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{g.pendidikan_terakhir}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -77,29 +122,41 @@ const GuruStaff = () => {
             <p className="text-sm text-muted-foreground mt-1">Staff pendukung yang profesional</p>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-5xl mx-auto">
-            {staffData.map((s, i) => (
-              <ScrollReveal key={s.id} delay={i * 80}>
-                <Link 
-                  to={`/tentang/guru-staff/${s.id}`}
-                  className="block bg-card rounded-xl p-5 border border-border shadow-sm text-center hover:shadow-md transition-shadow group cursor-pointer"
-                >
-                  <div className="overflow-hidden rounded-full w-16 h-16 mx-auto mb-3 ring-2 ring-transparent group-hover:ring-primary/20 transition-all">
-                    <img
-                      src={s.photo}
-                      alt={s.name}
-                      loading="lazy"
-                      width={512}
-                      height={512}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <p className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{s.name}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{s.role}</p>
-                </Link>
-              </ScrollReveal>
-            ))}
-          </div>
+          {staffData.length === 0 ? (
+            <div className="py-10 text-center text-muted-foreground">
+              Data staff belum tersedia.
+            </div>
+          ) : (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 max-w-5xl mx-auto">
+              {staffData.map((s, i) => (
+                <ScrollReveal key={s.id} delay={i * 80}>
+                  <Link 
+                    to={`/tentang/guru-staff/${s.id}`}
+                    className="block bg-card rounded-xl p-5 border border-border shadow-sm text-center hover:shadow-md transition-shadow group cursor-pointer text-current no-underline"
+                  >
+                    <div className="overflow-hidden rounded-full w-16 h-16 mx-auto mb-3 ring-2 ring-transparent group-hover:ring-primary/20 transition-all">
+                      {s.photo_url ? (
+                        <img
+                          src={s.photo_url}
+                          alt={s.name}
+                          loading="lazy"
+                          width={128}
+                          height={128}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-muted flex items-center justify-center text-muted-foreground">
+                          <UserIcon className="w-6 h-6" />
+                        </div>
+                      )}
+                    </div>
+                    <p className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{s.name}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{s.role}</p>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </Layout>
