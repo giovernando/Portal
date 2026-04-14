@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import schoolLogo from "@/assets/school-logo.png";
 import { cn } from "@/lib/utils";
@@ -172,18 +172,6 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground text-xs py-2">
-        <div className="container flex items-center justify-center gap-6 flex-wrap">
-          <a href="tel:085729319861" className="flex items-center gap-1.5 hover:text-accent transition-colors">
-            <Phone className="w-3 h-3" /> 085729319861
-          </a>
-          <a href="mailto:bantuanvelocity@gmail.com" className="flex items-center gap-1.5 hover:text-accent transition-colors">
-            <Mail className="w-3 h-3" /> bantuanvelocity@gmail.com
-          </a>
-        </div>
-      </div>
-
       {/* Main Navbar */}
       <header
         className={cn(
@@ -226,15 +214,17 @@ export const Navbar = () => {
               )
             )}
             {/* PPDB CTA Button */}
-            <Link
-              to="/ppdb"
+            <a
+              href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20Sekolah%20Nusantara."
+              target="_blank"
+              rel="noopener noreferrer"
               className={cn(
                 "ml-2 px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-200",
                 "bg-accent text-accent-foreground hover:brightness-110 hover:shadow-md"
               )}
             >
               PPDB
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile Toggle */}
@@ -289,12 +279,14 @@ export const Navbar = () => {
                   )
                 )}
 
-                <Link
-                  to="/ppdb"
+                <a
+                  href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20Sekolah%20Nusantara."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-2 px-4 py-3 rounded-lg text-sm font-semibold text-center bg-accent text-accent-foreground"
                 >
                   PPDB Online
-                </Link>
+                </a>
               </div>
             </motion.nav>
           )}
