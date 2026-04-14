@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +13,7 @@ export const CtaSection = () => (
         </p>
         <div className="pt-4">
           <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-green-dark rounded-full px-10 font-semibold">
-            <Link to="/ppdb">Daftar Sekarang</Link>
+            <a href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20Sekolah%20Nusantara." target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
           </Button>
         </div>
       </ScrollReveal>
