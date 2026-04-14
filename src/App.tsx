@@ -20,6 +20,7 @@ import VisiMisi from "./pages/tentang/VisiMisi";
 import Struktur from "./pages/tentang/Struktur";
 import KepalaSekolah from "./pages/tentang/KepalaSekolah";
 import GuruStaff from "./pages/tentang/GuruStaff";
+import ProfilDetail from "./pages/tentang/ProfilDetail";
 
 // Sub-pages: Akademik
 import Kurikulum from "./pages/program/Kurikulum";
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/tentang/struktur" element={<Struktur />} />
           <Route path="/tentang/kepala-sekolah" element={<KepalaSekolah />} />
           <Route path="/tentang/guru-staff" element={<GuruStaff />} />
+          <Route path="/tentang/guru-staff/:id" element={<ProfilDetail />} />
           <Route path="/program" element={<Program />} />
           <Route path="/program/kurikulum" element={<Kurikulum />} />
           <Route path="/program/jadwal" element={<Jadwal />} />
