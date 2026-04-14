@@ -72,9 +72,6 @@ export const HeroCarousel = () => {
             transition={{ duration: 0.6 }}
             className="text-primary-foreground space-y-6"
           >
-            <div className="inline-block bg-accent/20 border border-accent/30 rounded-full px-4 py-1.5 text-sm font-medium text-accent">
-              Tahun Ajaran 2025/2026
-            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
               {heroSlides[current].title}<br />
               <span className="text-accent">{heroSlides[current].highlight}</span>
