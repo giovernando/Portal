@@ -2,22 +2,6 @@ import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { toast } from "@/hooks/use-toast";
-
-const contactSchema = z.object({
-  name: z.string().trim().min(2, "Nama minimal 2 karakter").max(100),
-  email: z.string().trim().email("Format email tidak valid").max(255),
-  subject: z.string().trim().min(3, "Subjek minimal 3 karakter").max(200),
-  message: z.string().trim().min(10, "Pesan minimal 10 karakter").max(1000),
-});
-
-type ContactForm = z.infer<typeof contactSchema>;
 
 const contactInfo = [
   { icon: MapPin, label: "Alamat", value: "Jl. Pendidikan No. 123, Jakarta Selatan, Indonesia" },
@@ -27,16 +11,6 @@ const contactInfo = [
 ];
 
 const Kontak = () => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>({
-    resolver: zodResolver(contactSchema),
-  });
-
-  const onSubmit = (data: ContactForm) => {
-    console.log("Contact:", data);
-    toast({ title: "Pesan Terkirim!", description: "Terima kasih, kami akan segera merespons pesan Anda." });
-    reset();
-  };
-
   return (
     <Layout>
       <PageHeader title="Hubungi Kami" subtitle="Kami siap membantu Anda" />
@@ -67,37 +41,26 @@ const Kontak = () => {
             </div>
           </ScrollReveal>
 
-          {/* Contact Form */}
+          {/* Google Maps */}
           <ScrollReveal delay={200}>
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-secondary rounded-2xl p-8 space-y-5">
-              <h2 className="font-display font-bold text-xl text-foreground">Kirim Pesan</h2>
-              <div className="gold-bar" />
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Nama</Label>
-                  <Input id="name" {...register("name")} placeholder="Nama Anda" />
-                  {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" {...register("email")} placeholder="email@contoh.com" />
-                  {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
-                </div>
+            <div className="bg-secondary rounded-2xl p-4 space-y-4 h-full">
+              <div>
+                <h2 className="font-display font-bold text-xl text-foreground">Lokasi Kami</h2>
+                <div className="gold-bar mt-2" />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="subject">Subjek</Label>
-                <Input id="subject" {...register("subject")} placeholder="Topik pesan" />
-                {errors.subject && <p className="text-sm text-destructive">{errors.subject.message}</p>}
+              <div className="rounded-xl overflow-hidden shadow-sm border border-border" style={{ height: "400px" }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.194741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sJakarta%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Lokasi Sekolah Nusantara"
+                />
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">Pesan</Label>
-                <textarea id="message" {...register("message")} rows={5} placeholder="Tulis pesan Anda..." className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none" />
-                {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
-              </div>
-              <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-green-dark font-semibold">
-                Kirim Pesan
-              </Button>
-            </form>
+            </div>
           </ScrollReveal>
         </div>
       </section>
