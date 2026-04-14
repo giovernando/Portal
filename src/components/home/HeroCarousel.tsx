@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -40,22 +40,27 @@ function useHeroCarousel(slideCount: number, interval = 5000) {
 
 export const HeroCarousel = () => {
   const { current, next, prev, goTo } = useHeroCarousel(heroSlides.length);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 300]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0.5]);
 
   return (
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={current}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0"
-        >
-          <img src={heroSlides[current].img} alt={heroSlides[current].highlight} className="w-full h-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
-        </motion.div>
-      </AnimatePresence>
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-primary/20">
+      <motion.div className="absolute inset-0 z-0" style={{ y, opacity }}>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-0"
+          >
+            <img src={heroSlides[current].img} alt={heroSlides[current].highlight} className="w-full h-full object-cover" width={1920} height={1080} />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
 
       <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center py-20">
         <AnimatePresence mode="wait">

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { GraduationCap, Users, BookOpen, Award } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import heroImg from "@/assets/hero-school.jpg";
 
@@ -66,19 +67,31 @@ const CountUpCard = ({ stat, delay }: { stat: StatItem; delay: number }) => {
   );
 };
 
-export const DataSekolah = () => (
-  <section className="relative py-20 lg:py-28 overflow-hidden">
-    {/* Parallax BG */}
-    <div className="absolute inset-0 -z-10">
-      <img
-        src={heroImg}
-        alt=""
-        className="w-full h-full object-cover"
-        style={{ transform: "translateZ(0)" }}
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-primary/85" />
-    </div>
+export const DataSekolah = () => {
+  const containerRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
+  
+  // Moves the background up/down relative to scroll position
+  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+
+  return (
+    <section ref={containerRef} className="relative py-20 lg:py-28 overflow-hidden">
+      {/* Parallax BG */}
+      <motion.div 
+        className="absolute inset-0 -z-10 origin-center"
+        style={{ y, scale: 1.25 }}
+      >
+        <img
+          src={heroImg}
+          alt=""
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-primary/85" />
+      </motion.div>
 
     <div className="container space-y-12">
       <ScrollReveal className="text-center space-y-3">
@@ -98,4 +111,5 @@ export const DataSekolah = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
