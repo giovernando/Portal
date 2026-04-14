@@ -3,34 +3,8 @@ import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Trophy, Medal, Award, Star } from "lucide-react";
 
-import studentMale1 from "@/assets/portraits/student-male-1.jpg";
-import studentFemale1 from "@/assets/portraits/student-female-1.jpg";
-import studentMale2 from "@/assets/portraits/student-male-2.jpg";
-import studentFemale2 from "@/assets/portraits/student-female-2.jpg";
-import studentMale3 from "@/assets/portraits/student-male-3.jpg";
-import studentFemale3 from "@/assets/portraits/student-female-3.jpg";
-
-interface PrestasiItem {
-  judul: string;
-  tahun: string;
-  tingkat: string;
-  siswa: string;
-  kategori: "akademik" | "olahraga" | "seni" | "lainnya";
-  photo: string;
-}
-
-const prestasiList: PrestasiItem[] = [
-  { judul: "Juara 1 Olimpiade Matematika", tahun: "2024", tingkat: "Nasional", siswa: "Ahmad Fauzan", kategori: "akademik", photo: studentMale1 },
-  { judul: "Juara 2 Lomba Robotik", tahun: "2024", tingkat: "Provinsi", siswa: "Tim Robotik", kategori: "akademik", photo: studentMale2 },
-  { judul: "Juara 1 Badminton Tunggal Putra", tahun: "2024", tingkat: "Kabupaten", siswa: "Dimas Arya", kategori: "olahraga", photo: studentMale3 },
-  { judul: "Juara 3 Debat Bahasa Inggris", tahun: "2023", tingkat: "Provinsi", siswa: "Putri Amelia", kategori: "akademik", photo: studentFemale1 },
-  { judul: "Juara 1 Tari Tradisional", tahun: "2023", tingkat: "Kabupaten", siswa: "Tim Tari", kategori: "seni", photo: studentFemale2 },
-  { judul: "Juara 2 Lomba Cerpen Nasional", tahun: "2023", tingkat: "Nasional", siswa: "Sinta Dewi", kategori: "akademik", photo: studentFemale3 },
-  { judul: "Juara 1 Pencak Silat", tahun: "2023", tingkat: "Provinsi", siswa: "M. Ridwan", kategori: "olahraga", photo: studentMale2 },
-  { judul: "Sekolah Adiwiyata", tahun: "2022", tingkat: "Provinsi", siswa: "Sekolah", kategori: "lainnya", photo: studentMale1 },
-  { judul: "Juara 1 Paduan Suara", tahun: "2022", tingkat: "Kabupaten", siswa: "Tim Paduan Suara", kategori: "seni", photo: studentFemale1 },
-  { judul: "Juara 2 Olimpiade Sains", tahun: "2022", tingkat: "Provinsi", siswa: "Rizky Pratama", kategori: "akademik", photo: studentMale3 },
-];
+import { Link } from "react-router-dom";
+import { prestasiData } from "@/data/prestasiData";
 
 const kategoriConfig = {
   akademik: { icon: Award, bg: "bg-blue-100 text-blue-700", label: "Akademik" },
@@ -67,40 +41,52 @@ const Prestasi = () => (
     </section>
 
     {/* Daftar Prestasi */}
-    <section className="py-16">
-      <div className="container max-w-4xl">
-        <ScrollReveal className="text-center mb-10 space-y-3">
+    <section className="py-16 bg-card">
+      <div className="container max-w-5xl">
+        <ScrollReveal className="text-center mb-12 space-y-3">
           <h2 className="section-title">Daftar Prestasi</h2>
           <div className="gold-bar mx-auto" />
         </ScrollReveal>
 
-        <div className="space-y-4">
-          {prestasiList.map((p, i) => {
+        <div className="space-y-8">
+          {prestasiData.map((p, i) => {
             const config = kategoriConfig[p.kategori];
             return (
-              <ScrollReveal key={i} delay={i * 60}>
-                <div className="flex items-start gap-4 bg-card rounded-xl p-5 border border-border shadow-sm hover:shadow-md transition-shadow">
-                  <img
-                    src={p.photo}
-                    alt={p.siswa}
-                    loading="lazy"
-                    width={512}
-                    height={512}
-                    className="w-12 h-12 rounded-xl object-cover shrink-0"
-                  />
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground">{p.judul}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {p.siswa} · {p.tahun}
+              <ScrollReveal key={p.id} delay={i * 60}>
+                <Link to={`/kesiswaan/prestasi/${p.id}`} className="flex flex-col md:flex-row bg-background rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+                  {/* Informasi (Kiri) */}
+                  <div className="p-6 md:p-8 flex-1 flex flex-col justify-center order-2 md:order-1">
+                    <div className="flex items-center flex-wrap gap-y-2 gap-x-3 mb-4">
+                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold ${config.bg}`}>
+                        <config.icon className="w-3.5 h-3.5 mr-1.5" />
+                        {config.label}
+                      </span>
+                      <span className="text-sm text-muted-foreground md:border-l border-border md:pl-3">
+                        Tingkat {p.tingkat}
+                      </span>
+                      <span className="text-sm text-muted-foreground border-l border-border pl-3">
+                        {p.tahun}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-display font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {p.judul}
+                    </h3>
+                    <p className="text-muted-foreground text-sm border-l-2 border-accent pl-3">
+                      Diraih oleh: <span className="font-semibold text-foreground uppercase tracking-wide">{p.siswa}</span>
                     </p>
                   </div>
-                  <div className="text-right shrink-0">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${config.bg}`}>
-                      {config.label}
-                    </span>
-                    <p className="text-xs text-muted-foreground mt-1">Tingkat {p.tingkat}</p>
+
+                  {/* Foto (Kanan) */}
+                  <div className="md:w-[40%] aspect-video md:aspect-auto relative overflow-hidden shrink-0 order-1 md:order-2">
+                    <img
+                      src={p.imgSrc}
+                      alt={p.judul}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
                   </div>
-                </div>
+                </Link>
               </ScrollReveal>
             );
           })}

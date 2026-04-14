@@ -30,6 +30,7 @@ import Kalender from "./pages/program/Kalender";
 
 // Sub-pages: Kesiswaan
 import Prestasi from "./pages/kesiswaan/Prestasi";
+import PrestasiDetail from "./pages/kesiswaan/PrestasiDetail";
 import Osis from "./pages/kesiswaan/Osis";
 
 const queryClient = new QueryClient();
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/fasilitas" element={<Fasilitas />} />
           <Route path="/ekstrakurikuler" element={<Ekstrakurikuler />} />
           <Route path="/kesiswaan/prestasi" element={<Prestasi />} />
+          <Route path="/kesiswaan/prestasi/:id" element={<PrestasiDetail />} />
           <Route path="/kesiswaan/osis" element={<Osis />} />
           <Route path="/ppdb" element={<PPDB />} />
           <Route path="/berita" element={<Berita />} />
