@@ -10,6 +10,7 @@ import Fasilitas from "./pages/Fasilitas";
 import Ekstrakurikuler from "./pages/Ekstrakurikuler";
 import PPDB from "./pages/PPDB";
 import Berita from "./pages/Berita";
+import BeritaDetail from "./pages/BeritaDetail";
 import Galeri from "./pages/Galeri";
 import Kontak from "./pages/Kontak";
 import NotFound from "./pages/NotFound";
@@ -58,6 +59,7 @@ const App = () => (
           <Route path="/kesiswaan/osis" element={<Osis />} />
           <Route path="/ppdb" element={<PPDB />} />
           <Route path="/berita" element={<Berita />} />
+          <Route path="/berita/:slug" element={<BeritaDetail />} />
           <Route path="/galeri" element={<Galeri />} />
           <Route path="/kontak" element={<Kontak />} />
           <Route path="*" element={<NotFound />} />
