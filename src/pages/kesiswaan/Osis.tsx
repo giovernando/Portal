@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout";
+﻿import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Users, Flag, Calendar, Megaphone } from "lucide-react";
@@ -37,7 +37,7 @@ const programs = [
 
 const Osis = () => (
   <Layout>
-    <PageHeader title="Organisasi Siswa" subtitle="OSIS Sekolah Nusantara Periode 2024/2025" />
+    <PageHeader title="Organisasi Siswa" subtitle="OSIS SMA PGRI 4 Palembang Periode 2024/2025" />
 
     {/* About */}
     <section className="py-16 bg-card">
@@ -49,7 +49,7 @@ const Osis = () => (
               <h2 className="text-2xl font-display font-bold">Tentang OSIS</h2>
             </div>
             <p className="opacity-90 leading-relaxed text-lg">
-              Organisasi Siswa Intra Sekolah (OSIS) Sekolah Nusantara merupakan wadah bagi seluruh siswa
+              Organisasi Siswa Intra Sekolah (OSIS) SMA PGRI 4 Palembang merupakan wadah bagi seluruh siswa
               untuk mengembangkan jiwa kepemimpinan, kreativitas, dan semangat gotong royong.
               OSIS berperan aktif dalam menyelenggarakan berbagai kegiatan yang mendukung
               pengembangan karakter dan soft skill siswa.

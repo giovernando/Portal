@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout";
+﻿import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Award, BookOpen, Heart, GraduationCap } from "lucide-react";
@@ -40,7 +40,7 @@ const KepalaSekolah = () => (
                 <h2 className="text-2xl font-display font-bold text-foreground">
                   Reza Kendrawan, S.Pd, M.Pd
                 </h2>
-                <p className="text-primary font-medium">Kepala Sekolah Nusantara</p>
+                <p className="text-primary font-medium">Kepala SMA PGRI 4 Palembang</p>
               </div>
               <blockquote className="border-l-4 border-accent pl-4 italic text-muted-foreground text-lg">
                 "Pendidikan bukan hanya tentang akademik, tetapi tentang membentuk manusia
@@ -48,7 +48,7 @@ const KepalaSekolah = () => (
               </blockquote>
               <p className="text-muted-foreground leading-relaxed">
                 Berpengalaman lebih dari 20 tahun di dunia pendidikan, beliau telah membawa
-                Sekolah Nusantara meraih berbagai penghargaan tingkat nasional. Di bawah
+                SMA PGRI 4 Palembang meraih berbagai penghargaan tingkat nasional. Di bawah
                 kepemimpinannya, sekolah terus berinovasi dalam metode pengajaran dan
                 pengembangan karakter siswa.
               </p>

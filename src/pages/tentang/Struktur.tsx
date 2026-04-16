@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout";
+﻿import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
@@ -36,7 +36,7 @@ const komite = [
 
 const Struktur = () => (
   <Layout>
-    <PageHeader title="Struktur Organisasi" subtitle="Susunan organisasi Sekolah Nusantara" />
+    <PageHeader title="Struktur Organisasi" subtitle="Susunan organisasi SMA PGRI 4 Palembang" />
     <section className="py-16">
       <div className="container max-w-4xl space-y-12">
         {/* Pimpinan */}

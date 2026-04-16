@@ -24,7 +24,7 @@ export const GaleriSection = () => (
       <ScrollReveal className="text-center space-y-3">
         <h2 className="section-title">Galeri Sekolah</h2>
         <div className="gold-bar mx-auto" />
-        <p className="section-subtitle mx-auto">Dokumentasi kegiatan dan fasilitas Sekolah Nusantara.</p>
+        <p className="section-subtitle mx-auto">Dokumentasi kegiatan dan fasilitas SMA PGRI 4 Palembang.</p>
       </ScrollReveal>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

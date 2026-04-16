@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout";
+﻿import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Building2, GraduationCap, MapPin, Award, Users, BookOpen, Monitor, Trophy } from "lucide-react";
@@ -39,7 +39,7 @@ const keunggulan = [
 
 const Sejarah = () => (
   <Layout>
-    <PageHeader title="Tentang Sekolah" subtitle="Mengenal lebih dekat Sekolah Nusantara" />
+    <PageHeader title="Tentang Sekolah" subtitle="Mengenal lebih dekat SMA PGRI 4 Palembang" />
 
     {/* Profil Sekolah */}
     <section className="py-16 bg-card">
@@ -52,12 +52,12 @@ const Sejarah = () => (
                 <h2 className="text-2xl font-display font-bold text-foreground">Profil Sekolah</h2>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Sekolah Nusantara adalah lembaga pendidikan yang berkomitmen untuk menciptakan generasi
+                SMA PGRI 4 Palembang adalah lembaga pendidikan yang berkomitmen untuk menciptakan generasi
                 unggul, berkarakter, dan berdaya saing global. Didirikan pada tahun 1985, sekolah ini
                 telah menjadi salah satu institusi pendidikan terkemuka di wilayahnya.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Dengan mengedepankan nilai-nilai integritas, inovasi, dan kepedulian, Sekolah Nusantara
+                Dengan mengedepankan nilai-nilai integritas, inovasi, dan kepedulian, SMA PGRI 4 Palembang
                 menyediakan lingkungan belajar yang kondusif dan mendukung perkembangan potensi setiap siswa
                 secara optimal.
               </p>
@@ -87,7 +87,7 @@ const Sejarah = () => (
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-elevated">
-              <img src={studentsImg} alt="Siswa Sekolah Nusantara" className="w-full h-72 object-cover" loading="lazy" />
+              <img src={studentsImg} alt="Siswa SMA PGRI 4 Palembang" className="w-full h-72 object-cover" loading="lazy" />
             </div>
           </div>
         </ScrollReveal>
@@ -100,7 +100,7 @@ const Sejarah = () => (
         <ScrollReveal className="text-center mb-12 space-y-3">
           <h2 className="section-title">Keunggulan Kami</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Berbagai keunggulan yang menjadikan Sekolah Nusantara sebagai pilihan terbaik untuk masa depan putra-putri Anda.
+            Berbagai keunggulan yang menjadikan SMA PGRI 4 Palembang sebagai pilihan terbaik untuk masa depan putra-putri Anda.
           </p>
           <div className="gold-bar mx-auto" />
         </ScrollReveal>

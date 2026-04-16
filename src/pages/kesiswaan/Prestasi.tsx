@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -41,7 +41,7 @@ const Prestasi = () => {
   if (loading) {
     return (
       <Layout>
-        <PageHeader title="Prestasi Siswa" subtitle="Pencapaian membanggakan siswa Sekolah Nusantara" />
+        <PageHeader title="Prestasi Siswa" subtitle="Pencapaian membanggakan siswa SMA PGRI 4 Palembang" />
         <div className="py-20 flex flex-col items-center justify-center text-muted-foreground">
           <Loader2 className="w-10 h-10 animate-spin mb-4" />
           <p>Memuat prestasi siswa...</p>
@@ -52,7 +52,7 @@ const Prestasi = () => {
 
   return (
     <Layout>
-      <PageHeader title="Prestasi Siswa" subtitle="Pencapaian membanggakan siswa Sekolah Nusantara" />
+      <PageHeader title="Prestasi Siswa" subtitle="Pencapaian membanggakan siswa SMA PGRI 4 Palembang" />
 
       {/* Stats */}
       <section className="py-12 bg-primary">

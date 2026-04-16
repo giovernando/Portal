@@ -44,7 +44,7 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-accent" />
-                <span className="opacity-80">Jl. Pendidikan No. 123, Jakarta Selatan, Indonesia</span>
+                <span className="opacity-80">Jl. Taqwa Mata Merah, Sei Selincah, Kec. Kalidoni, Kota Palembang, Sumatera Selatan 30119</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 shrink-0 text-accent" />
