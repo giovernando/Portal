@@ -19,7 +19,7 @@ interface HeroSlide {
 }
 
 const heroSlides: HeroSlide[] = [
-  { img: heroImg, title: "SEKOLAH", highlight: "NUSANTARA", subtitle: "Membangun Masa Depan dengan Pendidikan Bermutu" },
+  { img: heroImg, title: "SMA PGRI 4", highlight: "PALEMBANG", subtitle: "Membangun Masa Depan dengan Pendidikan Bermutu" },
   { img: heroCampusImg, title: "LINGKUNGAN", highlight: "KONDUSIF", subtitle: "Kampus hijau dan modern untuk belajar yang nyaman" },
   { img: heroGradImg, title: "PRESTASI", highlight: "GEMILANG", subtitle: "Mencetak lulusan berprestasi dan berkarakter" },
   { img: heroLabImg, title: "FASILITAS", highlight: "MODERN", subtitle: "Laboratorium lengkap untuk pembelajaran sains terbaik" },

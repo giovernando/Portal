@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import schoolLogo from "@/assets/school-logo.png";
+
 import { cn } from "@/lib/utils";
 
 interface DropdownItem {
@@ -181,9 +181,9 @@ export const Navbar = () => {
       >
         <div className="container flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3">
-            <img src={schoolLogo} alt="Logo Sekolah" className="w-10 h-10 md:w-12 md:h-12" />
+            <img src="/logo-sekolah.png" alt="Logo SMA PGRI 4" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
             <span className="font-display font-bold text-lg md:text-xl text-primary">
-              SEKOLAH NUSANTARA
+              SMA PGRI 4 PALEMBANG
             </span>
           </Link>
 
@@ -215,7 +215,7 @@ export const Navbar = () => {
             )}
             {/* PPDB CTA Button */}
             <a
-              href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20Sekolah%20Nusantara."
+              href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20SMA%20PGRI%204."
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
