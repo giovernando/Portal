@@ -1,4 +1,4 @@
-import { useRef } from "react";
+﻿import { useRef } from "react";
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -31,7 +31,7 @@ const TentangKami = () => {
 
   return (
     <Layout>
-      <PageHeader title="Tentang Kami" subtitle="Mengenal lebih dekat Sekolah Nusantara" />
+      <PageHeader title="Tentang Kami" subtitle="Mengenal lebih dekat SMA PGRI 4 Palembang" />
 
       {/* Visi Misi */}
       <section className="section-padding bg-card">
@@ -84,10 +84,10 @@ const TentangKami = () => {
               <div className="gold-bar" />
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Sekolah Nusantara didirikan pada tahun 1985 dengan visi untuk memberikan pendidikan berkualitas bagi masyarakat Indonesia. Bermula dari sebuah bangunan sederhana dengan hanya beberapa kelas, sekolah ini terus berkembang menjadi institusi pendidikan modern.
+                  SMA PGRI 4 Palembang didirikan pada tahun 1985 dengan visi untuk memberikan pendidikan berkualitas bagi masyarakat Indonesia. Bermula dari sebuah bangunan sederhana dengan hanya beberapa kelas, sekolah ini terus berkembang menjadi institusi pendidikan modern.
                 </p>
                 <p>
-                  Selama lebih dari tiga dekade, Sekolah Nusantara telah meluluskan ribuan siswa berprestasi yang kini berkarya di berbagai bidang, baik di dalam maupun luar negeri.
+                  Selama lebih dari tiga dekade, SMA PGRI 4 Palembang telah meluluskan ribuan siswa berprestasi yang kini berkarya di berbagai bidang, baik di dalam maupun luar negeri.
                 </p>
               </div>
             </div>

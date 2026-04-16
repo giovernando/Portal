@@ -1,4 +1,4 @@
-import guruMale1 from "@/assets/portraits/guru-male-1.jpg";
+﻿import guruMale1 from "@/assets/portraits/guru-male-1.jpg";
 import guruMale2 from "@/assets/portraits/guru-male-2.jpg";
 import guruMale3 from "@/assets/portraits/guru-male-3.jpg";
 import guruMale4 from "@/assets/portraits/guru-male-4.jpg";
@@ -35,9 +35,9 @@ export const guruData: Person[] = [
     photo: guruMale1,
     nip: "198501152010011001",
     email: "reza.kendrawan@sekolahnusantara.sch.id",
-    bio: "Berpengalaman lebih dari 15 tahun di dunia pendidikan. Memiliki visi untuk menjadikan Sekolah Nusantara sebagai lembaga pendidikan unggulan yang menghasilkan generasi berkarakter dan berdaya saing global.",
+    bio: "Berpengalaman lebih dari 15 tahun di dunia pendidikan. Memiliki visi untuk menjadikan SMA PGRI 4 Palembang sebagai lembaga pendidikan unggulan yang menghasilkan generasi berkarakter dan berdaya saing global.",
     pengalaman: [
-      "Kepala Sekolah Nusantara (2020 - Sekarang)",
+      "Kepala SMA PGRI 4 Palembang (2020 - Sekarang)",
       "Wakil Kepala Sekolah Bidang Kurikulum (2015 - 2020)",
       "Guru Matematika SMP Negeri 5 Jakarta (2010 - 2015)",
     ],
@@ -71,7 +71,7 @@ export const guruData: Person[] = [
     bio: "Guru matematika yang kreatif dan inovatif dalam metode pengajaran. Berhasil membimbing siswa meraih juara olimpiade matematika tingkat kota.",
     mataPelajaran: "Matematika",
     pengalaman: [
-      "Guru Matematika Sekolah Nusantara (2013 - Sekarang)",
+      "Guru Matematika SMA PGRI 4 Palembang (2013 - Sekarang)",
       "Pembina Olimpiade Matematika (2015 - Sekarang)",
     ],
   },
@@ -87,7 +87,7 @@ export const guruData: Person[] = [
     bio: "Menguasai berbagai metode pengajaran bahasa Inggris modern. Aktif mengembangkan program English Club dan debat bahasa Inggris.",
     mataPelajaran: "Bahasa Inggris",
     pengalaman: [
-      "Guru Bahasa Inggris Sekolah Nusantara (2012 - Sekarang)",
+      "Guru Bahasa Inggris SMA PGRI 4 Palembang (2012 - Sekarang)",
       "Koordinator English Club (2014 - Sekarang)",
     ],
   },
@@ -103,7 +103,7 @@ export const guruData: Person[] = [
     bio: "Mantan atlet nasional yang kini mendedikasikan diri di dunia pendidikan. Membimbing siswa dalam berbagai cabang olahraga.",
     mataPelajaran: "Pendidikan Jasmani & Kesehatan",
     pengalaman: [
-      "Guru Penjaskes Sekolah Nusantara (2014 - Sekarang)",
+      "Guru Penjaskes SMA PGRI 4 Palembang (2014 - Sekarang)",
       "Pelatih Tim Futsal Sekolah (2015 - Sekarang)",
       "Atlet Nasional Cabang Atletik (2009 - 2013)",
     ],
@@ -120,7 +120,7 @@ export const guruData: Person[] = [
     bio: "Lulusan program pertukaran pelajar di Beijing. Berpengalaman mengajar bahasa Mandarin dengan pendekatan budaya interaktif.",
     mataPelajaran: "Bahasa Mandarin",
     pengalaman: [
-      "Guru Bahasa Mandarin Sekolah Nusantara (2015 - Sekarang)",
+      "Guru Bahasa Mandarin SMA PGRI 4 Palembang (2015 - Sekarang)",
       "Program Pertukaran di Beijing Normal University (2013 - 2014)",
     ],
   },
@@ -136,7 +136,7 @@ export const guruData: Person[] = [
     bio: "Guru IPA yang passionate dalam penelitian sains. Membimbing siswa dalam berbagai proyek sains dan kompetisi tingkat nasional.",
     mataPelajaran: "Ilmu Pengetahuan Alam",
     pengalaman: [
-      "Guru IPA Sekolah Nusantara (2013 - Sekarang)",
+      "Guru IPA SMA PGRI 4 Palembang (2013 - Sekarang)",
       "Pembina KIR (Karya Ilmiah Remaja) (2016 - Sekarang)",
     ],
   },
@@ -152,7 +152,7 @@ export const guruData: Person[] = [
     bio: "Mengajarkan IPS dengan pendekatan kontekstual yang menghubungkan materi dengan kehidupan sehari-hari siswa.",
     mataPelajaran: "Ilmu Pengetahuan Sosial",
     pengalaman: [
-      "Guru IPS Sekolah Nusantara (2014 - Sekarang)",
+      "Guru IPS SMA PGRI 4 Palembang (2014 - Sekarang)",
       "Koordinator Study Tour (2017 - Sekarang)",
     ],
   },
@@ -168,7 +168,7 @@ export const guruData: Person[] = [
     bio: "Guru bahasa Indonesia yang aktif membina kegiatan literasi sekolah dan lomba debat. Penulis buku panduan kebahasaan untuk siswa SMP.",
     mataPelajaran: "Bahasa Indonesia",
     pengalaman: [
-      "Guru Bahasa Indonesia Sekolah Nusantara (2012 - Sekarang)",
+      "Guru Bahasa Indonesia SMA PGRI 4 Palembang (2012 - Sekarang)",
       "Pembina Majalah Sekolah (2014 - Sekarang)",
     ],
   },
@@ -184,7 +184,7 @@ export const guruData: Person[] = [
     bio: "Ahli di bidang teknologi informasi dan pemrograman. Mengembangkan kurikulum digital literasi dan membimbing siswa dalam kompetisi IT.",
     mataPelajaran: "Teknologi Informasi & Komunikasi",
     pengalaman: [
-      "Guru TIK Sekolah Nusantara (2015 - Sekarang)",
+      "Guru TIK SMA PGRI 4 Palembang (2015 - Sekarang)",
       "Koordinator Lab Komputer (2016 - Sekarang)",
       "Software Developer di PT Teknologi (2012 - 2015)",
     ],
@@ -203,8 +203,8 @@ export const staffData: Person[] = [
     email: "siti.nurhaliza@sekolahnusantara.sch.id",
     bio: "Mengelola administrasi sekolah dengan profesional dan efisien. Bertanggung jawab atas seluruh operasional tata usaha sekolah.",
     pengalaman: [
-      "Kepala Tata Usaha Sekolah Nusantara (2018 - Sekarang)",
-      "Staff Administrasi Sekolah Nusantara (2010 - 2018)",
+      "Kepala Tata Usaha SMA PGRI 4 Palembang (2018 - Sekarang)",
+      "Staff Administrasi SMA PGRI 4 Palembang (2010 - 2018)",
     ],
   },
   {
@@ -215,7 +215,7 @@ export const staffData: Person[] = [
     photo: staffMale1,
     bio: "Mendukung kelancaran proses administrasi siswa dan surat-menyurat sekolah dengan teliti dan tepat waktu.",
     pengalaman: [
-      "Staff Administrasi Sekolah Nusantara (2015 - Sekarang)",
+      "Staff Administrasi SMA PGRI 4 Palembang (2015 - Sekarang)",
     ],
   },
   {
@@ -226,7 +226,7 @@ export const staffData: Person[] = [
     photo: staffFemale2,
     bio: "Mengelola keuangan sekolah secara transparan dan akuntabel. Memastikan pengelolaan dana BOS dan SPP berjalan dengan baik.",
     pengalaman: [
-      "Staff Keuangan Sekolah Nusantara (2016 - Sekarang)",
+      "Staff Keuangan SMA PGRI 4 Palembang (2016 - Sekarang)",
     ],
   },
   {
@@ -237,7 +237,7 @@ export const staffData: Person[] = [
     photo: staffMale2,
     bio: "Mengelola perpustakaan sekolah dan mendorong budaya literasi di kalangan siswa melalui berbagai program membaca.",
     pengalaman: [
-      "Petugas Perpustakaan Sekolah Nusantara (2014 - Sekarang)",
+      "Petugas Perpustakaan SMA PGRI 4 Palembang (2014 - Sekarang)",
     ],
   },
   {
@@ -248,7 +248,7 @@ export const staffData: Person[] = [
     photo: staffMale3,
     bio: "Menjaga keamanan dan ketertiban lingkungan sekolah. Memastikan seluruh area sekolah aman dan kondusif untuk belajar.",
     pengalaman: [
-      "Petugas Keamanan Sekolah Nusantara (2012 - Sekarang)",
+      "Petugas Keamanan SMA PGRI 4 Palembang (2012 - Sekarang)",
     ],
   },
 ];

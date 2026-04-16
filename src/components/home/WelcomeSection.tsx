@@ -1,4 +1,4 @@
-import { ScrollReveal } from "@/components/ScrollReveal";
+﻿import { ScrollReveal } from "@/components/ScrollReveal";
 import principalImg from "@/assets/principal.jpg";
 
 export const WelcomeSection = () => (
@@ -23,7 +23,7 @@ export const WelcomeSection = () => (
             <p>Assalamu'alaikum warahmatullahi wabarakatuh,</p>
             <p>Salam sejahtera bagi kita semua.</p>
             <p>
-              Dengan penuh rasa syukur dan bangga, saya menyambut para siswa, orang tua, serta seluruh masyarakat yang telah mempercayakan pendidikan putra-putrinya kepada <strong className="text-foreground">Sekolah Nusantara</strong>.
+              Dengan penuh rasa syukur dan bangga, saya menyambut para siswa, orang tua, serta seluruh masyarakat yang telah mempercayakan pendidikan putra-putrinya kepada <strong className="text-foreground">SMA PGRI 4 Palembang</strong>.
             </p>
             <p>
               Sekolah ini hadir sebagai lembaga pendidikan yang berkomitmen untuk mencetak generasi yang cerdas, berakhlak mulia, serta siap menghadapi tantangan zaman.
@@ -31,7 +31,7 @@ export const WelcomeSection = () => (
           </div>
           <p className="font-display font-semibold text-foreground">
             Reza Kendrawan, S.Pd<br />
-            <span className="text-sm text-muted-foreground font-body">Kepala Sekolah Nusantara</span>
+            <span className="text-sm text-muted-foreground font-body">Kepala SMA PGRI 4 Palembang</span>
           </p>
         </div>
       </ScrollReveal>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -39,7 +39,7 @@ const Jadwal = () => {
 
   return (
     <Layout>
-      <PageHeader title="Jadwal Pelajaran" subtitle="Jadwal kegiatan belajar mengajar Sekolah Nusantara" />
+      <PageHeader title="Jadwal Pelajaran" subtitle="Jadwal kegiatan belajar mengajar SMA PGRI 4 Palembang" />
       
       <section className="py-16 bg-card">
         <div className="container max-w-6xl">

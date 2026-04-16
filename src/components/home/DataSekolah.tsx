@@ -73,14 +73,14 @@ export const DataSekolah = () => {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-  
+
   // Moves the background up/down relative to scroll position
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
     <section ref={containerRef} className="relative py-20 lg:py-28 overflow-hidden">
       {/* Parallax BG */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 -z-10 origin-center"
         style={{ y, scale: 1.25 }}
       >
@@ -93,23 +93,23 @@ export const DataSekolah = () => {
         <div className="absolute inset-0 bg-primary/85" />
       </motion.div>
 
-    <div className="container space-y-12">
-      <ScrollReveal className="text-center space-y-3">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground">
-          Data Sekolah
-        </h2>
-        <div className="w-16 h-1 bg-accent rounded-full mx-auto" />
-        <p className="text-primary-foreground/80 max-w-xl mx-auto">
-          Sekolah Nusantara terus berkembang dalam memberikan pendidikan terbaik.
-        </p>
-      </ScrollReveal>
+      <div className="container space-y-12">
+        <ScrollReveal className="text-center space-y-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground">
+            Data Sekolah
+          </h2>
+          <div className="w-16 h-1 bg-accent rounded-full mx-auto" />
+          <p className="text-primary-foreground/80 max-w-xl mx-auto">
+            SMA PGRI 4 Palembang terus berkembang dalam memberikan pendidikan terbaik.
+          </p>
+        </ScrollReveal>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        {stats.map((stat, i) => (
-          <CountUpCard key={i} stat={stat} delay={i * 100} />
-        ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {stats.map((stat, i) => (
+            <CountUpCard key={i} stat={stat} delay={i * 100} />
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };

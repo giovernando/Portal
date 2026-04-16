@@ -1,4 +1,4 @@
-import { Layout } from "@/components/Layout";
+﻿import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { BookOpen, Lightbulb, Users, Globe } from "lucide-react";
@@ -30,7 +30,7 @@ const Kurikulum = () => (
               <h2 className="text-2xl font-display font-bold">Kurikulum Merdeka</h2>
             </div>
             <p className="opacity-90 leading-relaxed text-lg">
-              Sekolah Nusantara menerapkan Kurikulum Merdeka yang memberikan kebebasan kepada
+              SMA PGRI 4 Palembang menerapkan Kurikulum Merdeka yang memberikan kebebasan kepada
               sekolah dan guru untuk mengembangkan pembelajaran sesuai kebutuhan dan potensi siswa.
               Kurikulum ini menekankan pada pengembangan kompetensi dan karakter melalui
               pembelajaran bermakna dan kontekstual.
