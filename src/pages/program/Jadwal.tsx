@@ -40,7 +40,7 @@ const Jadwal = () => {
   return (
     <Layout>
       <PageHeader title="Jadwal Pelajaran" subtitle="Jadwal kegiatan belajar mengajar SMA PGRI 4 Palembang" />
-      
+
       <section className="py-16 bg-card">
         <div className="container max-w-6xl">
           <ScrollReveal>
@@ -51,20 +51,19 @@ const Jadwal = () => {
                 </div>
                 <div>
                   <h2 className="text-2xl font-display font-bold text-foreground">Jadwal Kelas {activeClass}</h2>
-                  <p className="text-sm text-muted-foreground">Tahun Pelajaran 2024/2025</p>
+                  <p className="text-sm text-muted-foreground">Tahun Pelajaran 2025/2026</p>
                 </div>
               </div>
-              
+
               <div className="flex flex-wrap justify-center gap-2">
                 {CLASSES.map((c) => (
                   <button
                     key={c}
                     onClick={() => setActiveClass(c)}
-                    className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
-                      activeClass === c
+                    className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${activeClass === c
                         ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
                         : "bg-secondary text-muted-foreground hover:bg-secondary/80"
-                    }`}
+                      }`}
                   >
                     Kelas {c}
                   </button>
@@ -88,7 +87,7 @@ const Jadwal = () => {
               {DAYS.map((day, idx) => {
                 const dayData = groupedSchedules[day];
                 if (!dayData) return null;
-                
+
                 return (
                   <ScrollReveal key={day} delay={idx * 100}>
                     <div className="bg-background rounded-2xl border border-border shadow-sm overflow-hidden h-full">
@@ -97,11 +96,10 @@ const Jadwal = () => {
                       </div>
                       <div className="p-2">
                         {dayData.map((item, i) => (
-                          <div 
-                            key={item.id} 
-                            className={`p-4 flex items-start gap-4 ${
-                              i !== dayData.length - 1 ? "border-b border-border" : ""
-                            }`}
+                          <div
+                            key={item.id}
+                            className={`p-4 flex items-start gap-4 ${i !== dayData.length - 1 ? "border-b border-border" : ""
+                              }`}
                           >
                             <div className="text-xs font-mono font-bold text-primary bg-primary/5 px-2 py-1 rounded min-w-[85px] text-center shrink-0">
                               {item.start_time.substring(0, 5)} - {item.end_time.substring(0, 5)}
@@ -133,7 +131,7 @@ const Jadwal = () => {
               <div className="flex-1 text-center md:text-left">
                 <h4 className="font-bold text-foreground">Informasi Tambahan</h4>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Jadwal dapat berubah sesua kebijakan kurikulum sekolah. 
+                  Jadwal dapat berubah sesua kebijakan kurikulum sekolah.
                   Pastikan siswa selalu memantau pengumuman terbaru melalui wali kelas masing-masing.
                   Istirahat I: 09:15 - 09:30, Istirahat II: 11:45 - 12:30.
                 </p>
