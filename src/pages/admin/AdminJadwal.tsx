@@ -83,11 +83,19 @@ export default function AdminJadwal() {
 
     try {
       setSaving(true);
+      
+      // Clean payload before sending to database to avoid schema cache errors
+      // remove relationships and read-only fields
+      const payload = { ...formData };
+      delete (payload as any).id;
+      delete (payload as any).created_at;
+      delete (payload as any).teachers;
+
       if (editingId) {
-        await akademikService.updateSchedule(editingId, formData);
+        await akademikService.updateSchedule(editingId, payload);
         toast.success("Jadwal diperbarui.");
       } else {
-        await akademikService.createSchedule(formData as Omit<ScheduleRecord, "id"|"created_at">);
+        await akademikService.createSchedule(payload as Omit<ScheduleRecord, "id"|"created_at">);
         toast.success("Jadwal ditambahkan.");
       }
       setIsOpen(false);
