@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -6,10 +6,10 @@ import { Clock, BookOpen, User, Loader2, Calendar } from "lucide-react";
 import { akademikService, ScheduleRecord } from "@/services/akademikService";
 
 const DAYS = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-const CLASSES = ["7A", "7B", "7C", "8A", "8B", "8C", "9A", "9B", "9C"];
+const CLASSES = ["X.1", "X.2", "X.3", "X.4", "XI.A1", "XI.A2", "XI.S1", "XI.S2", "XII.IPA.1", "XII.IPA.2", "XII.IPS"];
 
 const Jadwal = () => {
-  const [activeClass, setActiveClass] = useState("7A");
+  const [activeClass, setActiveClass] = useState("X.1");
   const [schedules, setSchedules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
