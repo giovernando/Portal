@@ -1,4 +1,4 @@
-﻿import { useRef } from "react";
+import { useRef } from "react";
 import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -43,8 +43,8 @@ const TentangKami = () => {
               </div>
               <h2 className="font-display font-bold text-2xl text-foreground">Visi</h2>
               <div className="gold-bar" />
-              <p className="text-muted-foreground leading-relaxed">
-                Menjadi lembaga pendidikan terdepan yang mencetak generasi cerdas, berakhlak mulia, berwawasan global, dan siap menjadi pemimpin masa depan.
+              <p className="text-muted-foreground leading-relaxed font-semibold">
+                "UNGGUL DALAM PRESTASI, BERAKHLAK, DAN BERWAWASAN LINGKUNGAN"
               </p>
             </div>
           </ScrollReveal>
@@ -56,11 +56,11 @@ const TentangKami = () => {
               <h2 className="font-display font-bold text-2xl text-foreground">Misi</h2>
               <div className="gold-bar" />
               <ul className="text-muted-foreground leading-relaxed space-y-2">
-                <li>• Menyelenggarakan pendidikan berkualitas berbasis kurikulum nasional</li>
-                <li>• Membentuk karakter siswa yang berakhlak mulia dan berjiwa pemimpin</li>
-                <li>• Mengembangkan potensi siswa melalui kegiatan akademik dan non-akademik</li>
-                <li>• Menciptakan lingkungan belajar yang aman, nyaman, dan inspiratif</li>
-                <li>• Menjalin kerjasama dengan orang tua dan masyarakat</li>
+                <li>• Melaksanakan Pembelajaran Yang Efektif dan Berdaya Saing</li>
+                <li>• Meningkatkan Prestasi Dalam Bidang Ekstrakulikuler</li>
+                <li>• Menumbuhkan Pengalaman Terhadap Ajaran Agama Yang Dianut</li>
+                <li>• Menumbuhkan Perilaku Yang Berakhlak Mulia</li>
+                <li>• Mewujudkan Sekolah Sebagai Wiyata Mandala</li>
               </ul>
             </div>
           </ScrollReveal>
