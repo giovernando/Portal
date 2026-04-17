@@ -1,8 +1,7 @@
-﻿import { Layout } from "@/components/Layout";
+import { Layout } from "@/components/Layout";
 import { PageHeader } from "@/components/PageHeader";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { Building2, GraduationCap, MapPin, Award, Users, BookOpen, Monitor, Trophy } from "lucide-react";
-import studentsImg from "@/assets/students.jpg";
 
 const keunggulan = [
   {
@@ -45,49 +44,49 @@ const Sejarah = () => (
     <section className="py-16 bg-card">
       <div className="container max-w-5xl">
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-2">
-                <Building2 className="w-8 h-8 text-primary" />
-                <h2 className="text-2xl font-display font-bold text-foreground">Profil Sekolah</h2>
-              </div>
-              <p className="text-muted-foreground leading-relaxed">
-                SMA PGRI 4 Palembang adalah lembaga pendidikan yang berkomitmen untuk menciptakan generasi
-                unggul, berkarakter, dan berdaya saing global. Didirikan pada tahun 1985, sekolah ini
-                telah menjadi salah satu institusi pendidikan terkemuka di wilayahnya.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Dengan mengedepankan nilai-nilai integritas, inovasi, dan kepedulian, SMA PGRI 4 Palembang
-                menyediakan lingkungan belajar yang kondusif dan mendukung perkembangan potensi setiap siswa
-                secara optimal.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Berlokasi strategis dan didukung fasilitas modern, sekolah ini menjadi pilihan utama
-                bagi orang tua yang menginginkan pendidikan terbaik untuk putra-putri mereka.
-              </p>
-
-              {/* Info Singkat */}
-              <div className="grid grid-cols-2 gap-3 pt-4">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 text-accent" />
-                  <span>Kota Nusantara, Indonesia</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Building2 className="w-4 h-4 text-accent" />
-                  <span>Berdiri sejak 1985</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Users className="w-4 h-4 text-accent" />
-                  <span>1.200+ Siswa Aktif</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Award className="w-4 h-4 text-accent" />
-                  <span>Akreditasi A</span>
-                </div>
-              </div>
+          <div className="max-w-4xl mx-auto space-y-4">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <Building2 className="w-10 h-10 text-primary" />
+              <h2 className="text-3xl font-display font-bold text-foreground text-center">Profil Sekolah</h2>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-elevated">
-              <img src={studentsImg} alt="Siswa SMA PGRI 4 Palembang" className="w-full h-72 object-cover" loading="lazy" />
+            <p className="text-muted-foreground leading-relaxed text-justify">
+              SMA PGRI 4 Palembang merupakan salah satu lembaga pendidikan tingkat menengah atas yang berlokasi di Kota Palembang, Provinsi Sumatera Selatan. Sekolah ini beralamat di Jalan Taqwa Mata Merah, Kelurahan Sei Selincah, Kecamatan Kalidoni.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-justify">
+              SMA PGRI 4 Palembang didirikan berdasarkan Surat Keputusan Nomor 182/I11.4/F4e yang ditetapkan pada tanggal 6 Februari 1987. Sejak awal berdirinya, sekolah ini berada di bawah naungan yayasan sebagai wujud nyata partisipasi masyarakat dalam mendukung penyelenggaraan pendidikan yang berkualitas.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-justify">
+              Sebagai institusi pendidikan swasta, SMA PGRI 4 Palembang senantiasa berkomitmen dalam meningkatkan mutu pendidikan melalui penyelenggaraan proses pembelajaran yang terencana, sistematis, dan berkelanjutan. Legalitas operasional sekolah terus diperbarui, dengan izin operasional terakhir yang ditetapkan pada tanggal 16 Oktober 2020.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-justify">
+              Dalam pelaksanaan kegiatan pembelajaran, SMA PGRI 4 Palembang menerapkan sistem pembelajaran pada waktu siang dengan enam hari sekolah. Kegiatan pendidikan didukung oleh ketersediaan sarana dan prasarana yang memadai guna menunjang proses belajar mengajar yang efektif dan kondusif.
+            </p>
+            <p className="text-muted-foreground leading-relaxed text-justify">
+              Dengan pengalaman lebih dari tiga dekade dalam dunia pendidikan, SMA PGRI 4 Palembang terus menunjukkan eksistensinya sebagai lembaga pendidikan yang adaptif terhadap perkembangan zaman. Puncaknya, pada tahun 2026, SMA PGRI 4 Palembang telah bertransformasi menjadi <span className="font-semibold text-primary">"SEKOLAH MODEL"</span> yang tidak hanya unggul dalam aspek akademik, tetapi juga menjadi rujukan dalam penerapan inovasi pembelajaran, penguatan karakter peserta didik, serta pengelolaan pendidikan yang profesional dan berdaya saing tinggi di tingkat regional maupun nasional.
+            </p>
+
+            {/* Info Singkat */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8">
+              <div className="flex flex-col items-center p-4 bg-secondary/50 rounded-xl space-y-2 text-center">
+                <MapPin className="w-6 h-6 text-accent" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Lokasi</span>
+                <span className="text-sm font-medium">Kalidoni, Palembang</span>
+              </div>
+              <div className="flex flex-col items-center p-4 bg-secondary/50 rounded-xl space-y-2 text-center">
+                <Building2 className="w-6 h-6 text-accent" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Berdiri Sejak</span>
+                <span className="text-sm font-medium">1987</span>
+              </div>
+              <div className="flex flex-col items-center p-4 bg-secondary/50 rounded-xl space-y-2 text-center">
+                <Users className="w-6 h-6 text-accent" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Siswa Aktif</span>
+                <span className="text-sm font-medium">1.240+</span>
+              </div>
+              <div className="flex flex-col items-center p-4 bg-secondary/50 rounded-xl space-y-2 text-center">
+                <Award className="w-6 h-6 text-accent" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Status</span>
+                <span className="text-sm font-medium">Sekolah Model</span>
+              </div>
             </div>
           </div>
         </ScrollReveal>
