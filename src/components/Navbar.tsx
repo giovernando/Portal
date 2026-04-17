@@ -182,7 +182,7 @@ export const Navbar = () => {
         <div className="container flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3">
             <img src="/logo-sekolah.png" alt="Logo SMA PGRI 4" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
-            <span className="font-display font-bold text-lg md:text-xl text-primary">
+            <span className="text-lg md:text-xl text-primary tracking-wider" style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 700 }}>
               SMA PGRI 4 PALEMBANG
             </span>
           </Link>
