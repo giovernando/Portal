@@ -6,8 +6,8 @@ import { Building2, GraduationCap, MapPin, Award, Users, BookOpen, Monitor, Trop
 const keunggulan = [
   {
     icon: Award,
-    title: "Akreditasi A",
-    desc: "Terakreditasi A oleh BAN-S/M sebagai bukti standar mutu pendidikan yang tinggi.",
+    title: "Akreditasi B",
+    desc: "Terakreditasi B oleh BAN-S/M sebagai bukti standar mutu pendidikan yang tinggi.",
   },
   {
     icon: Users,
