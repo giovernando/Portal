@@ -26,8 +26,7 @@ const VisiMisi = () => (
               <h2 className="text-2xl font-display font-bold">Visi</h2>
             </div>
             <blockquote className="text-xl md:text-2xl font-display leading-relaxed italic opacity-95">
-              "Menjadi lembaga pendidikan unggulan yang menghasilkan generasi berkarakter,
-              berprestasi, dan berwawasan global berlandaskan nilai-nilai kebangsaan."
+              "UNGGUL DALAM PRESTASI, BERAKHLAK, DAN BERWAWASAN LINGKUNGAN"
             </blockquote>
           </div>
         </ScrollReveal>
@@ -43,12 +42,11 @@ const VisiMisi = () => (
             </div>
             <ul className="space-y-4">
               {[
-                "Menyelenggarakan pendidikan berkualitas berbasis kurikulum nasional dan internasional.",
-                "Membentuk karakter siswa yang berakhlak mulia, disiplin, dan bertanggung jawab.",
-                "Mengembangkan potensi akademik dan non-akademik siswa secara optimal.",
-                "Menciptakan lingkungan belajar yang kondusif, inovatif, dan menyenangkan.",
-                "Menjalin kerja sama dengan berbagai pihak untuk meningkatkan mutu pendidikan.",
-                "Mempersiapkan siswa agar mampu bersaing di era globalisasi.",
+                "Melaksanakan Pembelajaran Yang Efektif dan Berdaya Saing",
+                "Meningkatkan Prestasi Dalam Bidang Ekstrakulikuler",
+                "Menumbuhkan Pengalaman Terhadap Ajaran Agama Yang Dianut",
+                "Menumbuhkan Perilaku Yang Berakhlak Mulia",
+                "Mewujudkan Sekolah Sebagai Wiyata Mandala",
               ].map((m, i) => (
                 <li key={i} className="flex items-start gap-4">
                   <span className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
