@@ -72,7 +72,10 @@ export const HeroCarousel = () => {
             transition={{ duration: 0.6 }}
             className="text-primary-foreground space-y-6"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
+            <h1
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-wider uppercase"
+              style={{ fontFamily: "'Fira Sans', sans-serif" }}
+            >
               {heroSlides[current].title}<br />
               <span className="text-accent">{heroSlides[current].highlight}</span>
             </h1>

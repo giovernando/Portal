@@ -53,15 +53,15 @@ const CountUpCard = ({ stat, delay }: { stat: StatItem; delay: number }) => {
   }, []);
 
   return (
-    <ScrollReveal delay={delay} direction="scale">
-      <div ref={ref} className="bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/15 rounded-2xl p-6 sm:p-8 text-center space-y-3 hover:bg-primary-foreground/15 transition-colors duration-300">
-        <div className="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mx-auto">
-          <stat.icon className="w-7 h-7 text-accent" />
+    <ScrollReveal delay={delay} direction="scale" className="h-full">
+      <div ref={ref} className="h-full bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/15 rounded-2xl p-5 sm:p-8 text-center flex flex-col items-center justify-center gap-3 hover:bg-primary-foreground/15 transition-colors duration-300">
+        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/20 rounded-xl flex items-center justify-center">
+          <stat.icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent" />
         </div>
-        <p className="text-3xl sm:text-4xl font-display font-bold text-primary-foreground">
+        <p className="text-2xl sm:text-4xl font-display font-bold text-primary-foreground leading-none">
           {count}{stat.suffix || ""}
         </p>
-        <p className="text-sm text-primary-foreground/75 font-medium">{stat.label}</p>
+        <p className="text-xs sm:text-sm text-primary-foreground/75 font-medium leading-tight">{stat.label}</p>
       </div>
     </ScrollReveal>
   );
@@ -104,7 +104,7 @@ export const DataSekolah = () => {
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
           {stats.map((stat, i) => (
             <CountUpCard key={i} stat={stat} delay={i * 100} />
           ))}
