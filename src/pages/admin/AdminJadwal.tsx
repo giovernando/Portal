@@ -14,16 +14,15 @@ const DAYS = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
 export default function AdminJadwal() {
   const [data, setData] = useState<any[]>([]);
   const [teachers, setTeachers] = useState<TeacherRecord[]>([]);
-  const [filterClass, setFilterClass] = useState("7A");
+  const [filterClass, setFilterClass] = useState("X.1");
   const [loading, setLoading] = useState(true);
 
   const [isOpen, setIsOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   
-  // Form States
   const [formData, setFormData] = useState<Partial<ScheduleRecord>>({ 
     day_of_week: "Senin", 
-    class_name: "7A",
+    class_name: "X.1",
     start_time: "07:00",
     end_time: "08:00"
   });
@@ -134,7 +133,7 @@ export default function AdminJadwal() {
               value={filterClass}
               onChange={(e) => setFilterClass(e.target.value)}
             >
-              {["7A", "7B", "7C", "8A", "8B", "8C", "9A", "9B", "9C"].map(c => (
+              {["X.1", "X.2", "X.3", "X.4", "XI.A1", "XI.A2", "XI.S1", "XI.S2", "XII.IPA.1", "XII.IPA.2", "XII.IPS"].map(c => (
                 <option key={c} value={c}>Kelas {c}</option>
               ))}
             </select>
@@ -228,10 +227,10 @@ export default function AdminJadwal() {
                 <select 
                   id="class"
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
-                  value={formData.class_name || "7A"}
+                  value={formData.class_name || "X.1"}
                   onChange={(e) => setFormData({...formData, class_name: e.target.value})}
                 >
-                  {["7A", "7B", "7C", "8A", "8B", "8C", "9A", "9B", "9C"].map(c => (
+                  {["X.1", "X.2", "X.3", "X.4", "XI.A1", "XI.A2", "XI.S1", "XI.S2", "XII.IPA.1", "XII.IPA.2", "XII.IPS"].map(c => (
                     <option key={c} value={c}>Kelas {c}</option>
                   ))}
                 </select>
