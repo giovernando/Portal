@@ -61,8 +61,8 @@ const Jadwal = () => {
                     key={c}
                     onClick={() => setActiveClass(c)}
                     className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${activeClass === c
-                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                        : "bg-secondary text-muted-foreground hover:bg-secondary/80"
+                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                      : "bg-secondary text-muted-foreground hover:bg-secondary/80"
                       }`}
                   >
                     Kelas {c}
@@ -131,9 +131,9 @@ const Jadwal = () => {
               <div className="flex-1 text-center md:text-left">
                 <h4 className="font-bold text-foreground">Informasi Tambahan</h4>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Jadwal dapat berubah sesua kebijakan kurikulum sekolah.
+                  Jadwal dapat berubah sesuai kebijakan kurikulum sekolah.
                   Pastikan siswa selalu memantau pengumuman terbaru melalui wali kelas masing-masing.
-                  Istirahat I: 09:15 - 09:30, Istirahat II: 11:45 - 12:30.
+                  {/* Istirahat I: 09:15 - 09:30, Istirahat II: 11:45 - 12:30. */}
                 </p>
               </div>
             </div>
