@@ -13,7 +13,7 @@ export const CtaSection = () => (
         </p>
         <div className="pt-4">
           <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-green-dark rounded-full px-10 font-semibold">
-            <a href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20Sekolah%20Nusantara." target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
+            <a href="https://wa.me/6285609301662?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20SMA%20PGRI%204%20Palembang." target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
           </Button>
         </div>
       </ScrollReveal>
