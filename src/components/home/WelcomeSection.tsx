@@ -30,7 +30,7 @@ export const WelcomeSection = () => (
             </p>
           </div>
           <p className="font-display font-semibold text-foreground">
-            Reza Kendrawan, S.Pd<br />
+            Nelly, S.Pd<br />
             <span className="text-sm text-muted-foreground font-body">Kepala SMA PGRI 4 Palembang</span>
           </p>
         </div>

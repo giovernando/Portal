@@ -5,7 +5,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const contactInfo = [
   { icon: MapPin, label: "Alamat", value: "Jl. Taqwa Mata Merah, Sei Selincah, Kec. Kalidoni, Kota Palembang, Sumatera Selatan 30119" },
-  { icon: Phone, label: "Telepon", value: "085729319861" },
+  { icon: Phone, label: "Telepon", value: "085609301662" },
   { icon: Mail, label: "Email", value: "SMAGRIFOURPLG@GMAIL.COM" },
   { icon: Clock, label: "Jam Operasional", value: "Senin - Jumat: 07:00 - 15:00" },
 ];

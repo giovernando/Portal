@@ -5,7 +5,7 @@ import { Award, BookOpen, Heart, GraduationCap } from "lucide-react";
 import principalImg from "@/assets/principal.jpg";
 
 const biodata = [
-  { label: "Nama Lengkap", value: "Reza Kendrawan, S.Pd, M.Pd" },
+  { label: "Nama Lengkap", value: "Nelly, S.Pd" },
   { label: "NIP", value: "196801152000121003" },
   { label: "Tempat, Tanggal Lahir", value: "Semarang, 15 Januari 1968" },
   { label: "Pendidikan Terakhir", value: "S2 Manajemen Pendidikan" },
@@ -38,7 +38,7 @@ const KepalaSekolah = () => (
             <div className="space-y-6 flex-1">
               <div>
                 <h2 className="text-2xl font-display font-bold text-foreground">
-                  Reza Kendrawan, S.Pd, M.Pd
+                  Nelly, S.Pd
                 </h2>
                 <p className="text-primary font-medium">Kepala SMA PGRI 4 Palembang</p>
               </div>

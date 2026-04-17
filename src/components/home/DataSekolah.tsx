@@ -14,7 +14,7 @@ interface StatItem {
 const stats: StatItem[] = [
   { icon: GraduationCap, value: 85, label: "Guru & Pengajar" },
   { icon: Users, value: 12, label: "Tata Usaha" },
-  { icon: BookOpen, value: 1240, suffix: "+", label: "Siswa Aktif" },
+  { icon: BookOpen, value: 400, suffix: "+", label: "Siswa Aktif" },
   { icon: Award, value: 18, label: "Ekstrakurikuler" },
 ];
 

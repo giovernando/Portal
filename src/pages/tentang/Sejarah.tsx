@@ -80,7 +80,7 @@ const Sejarah = () => (
               <div className="flex flex-col items-center p-4 bg-secondary/50 rounded-xl space-y-2 text-center">
                 <Users className="w-6 h-6 text-accent" />
                 <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Siswa Aktif</span>
-                <span className="text-sm font-medium">1.240+</span>
+                <span className="text-sm font-medium">400+</span>
               </div>
               <div className="flex flex-col items-center p-4 bg-secondary/50 rounded-xl space-y-2 text-center">
                 <Award className="w-6 h-6 text-accent" />
