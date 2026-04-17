@@ -84,7 +84,7 @@ export const HeroCarousel = () => {
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 rounded-full">
-                <a href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20Sekolah%20Nusantara." target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
+                <a href="https://wa.me/6285609301662?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20SMA%20PGRI%204%20Palembang." target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
               </Button>
               <Button asChild size="lg" className="bg-white text-primary shadow-lg hover:bg-primary/90 hover:text-white font-semibold px-8 rounded-full transition-all duration-200">
                 <Link to="/tentang">Tentang Kami</Link>

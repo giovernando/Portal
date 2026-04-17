@@ -215,7 +215,7 @@ export const Navbar = () => {
             )}
             {/* PPDB CTA Button */}
             <a
-              href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20SMA%20PGRI%204."
+              href="https://wa.me/6285609301662?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20SMA%20PGRI%204%20Palembang."
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
@@ -280,7 +280,7 @@ export const Navbar = () => {
                 )}
 
                 <a
-                  href="https://wa.me/6285729319861?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20Sekolah%20Nusantara."
+                  href="https://wa.me/6285609301662?text=Halo%2C%20saya%20ingin%20mendaftar%20di%20SMA%20PGRI%204%20Palembang."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 px-4 py-3 rounded-lg text-sm font-semibold text-center bg-accent text-accent-foreground"
